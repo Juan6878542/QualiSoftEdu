@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block title %}Código{% endblock %}
+{% block content %}
+<div class="container mt-4">
+    <h2>Buenas prácticas de código</h2>
+    <p>En esta sección se muestra un ejemplo de código limpio y mantenible que sigue las normas de calidad de software.</p>
+
+    <pre><code class="language-python">
+# Ejemplo de buenas prácticas en Python
+# Cumple con los principios de claridad, mantenibilidad y documentación.
+
+def calcular_promedio(calificaciones):
+    """
+    Calcula el promedio de una lista de calificaciones.
+    Args:
+        calificaciones (list): Lista de valores numéricos.
+    Returns:
+        float: Promedio calculado.
+    """
+    if not calificaciones:
+        return 0
+    return sum(calificaciones) / len(calificaciones)
+
+# Uso de la función
+valores = [4.5, 3.8, 5.0, 4.2]
+promedio = calcular_promedio(valores)
+print(f"Promedio: {promedio:.2f}")
+    </code></pre>
+
+    <p>✅ Este ejemplo aplica principios de calidad como:</p>
+    <ul>
+        <li><b>Claridad:</b> nombres descriptivos para funciones y variables.</li>
+        <li><b>Reusabilidad:</b> código modular y reutilizable.</li>
+        <li><b>Mantenibilidad:</b> uso de comentarios y documentación en docstrings.</li>
+        <li><b>Confiabilidad:</b> manejo de listas vacías y validación de datos.</li>
+    </ul>
+</div>
+{% endblock %}
