@@ -1,3 +1,74 @@
 {% extends 'base.html' %}
-{% block title %}Normas{% endblock %}
-{% block content %}<h2>Normas relevantes</h2><p>ISO/IEC 25010, ISO 9001, ISO/IEC 12207. Texto de ejemplo académico.</p>{% endblock %}
+{% block title %}Normas de Calidad de Software{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+  <h2 class="text-primary mb-3">Normas Relevantes en la Calidad de Software</h2>
+  <p class="lead">
+    Las normas internacionales proporcionan un marco estructurado para asegurar que el software cumpla con los niveles de calidad, seguridad y confiabilidad esperados. A continuación, se presentan las principales normas aplicadas en la ingeniería de software.
+  </p>
+
+  <!-- ISO/IEC 25010 -->
+  <div class="card mb-3 shadow-sm">
+    <div class="card-body">
+      <h4 class="card-title text-success">ISO/IEC 25010 – Modelo de Calidad del Producto</h4>
+      <p class="card-text">
+        La norma <strong>ISO/IEC 25010</strong> define un modelo para evaluar la calidad del software mediante ocho características principales:
+      </p>
+      <ul>
+        <li><strong>Adecuación funcional:</strong> mide si el software cumple los requisitos.</li>
+        <li><strong>Eficiencia del desempeño:</strong> evalúa tiempos de respuesta y consumo de recursos.</li>
+        <li><strong>Compatibilidad:</strong> asegura la interoperabilidad con otros sistemas.</li>
+        <li><strong>Usabilidad:</strong> mide la facilidad de uso y comprensión por parte del usuario.</li>
+        <li><strong>Fiabilidad:</strong> valora la estabilidad y recuperación ante fallos.</li>
+        <li><strong>Seguridad:</strong> protege los datos y controla accesos.</li>
+        <li><strong>Mantenibilidad:</strong> facilidad para modificar y mejorar el sistema.</li>
+        <li><strong>Portabilidad:</strong> mide la capacidad de operar en distintos entornos.</li>
+      </ul>
+      <p>
+        Es la norma más utilizada actualmente para evaluar la calidad técnica del software.
+      </p>
+    </div>
+  </div>
+
+  <!-- ISO 9001 -->
+  <div class="card mb-3 shadow-sm">
+    <div class="card-body">
+      <h4 class="card-title text-success">ISO 9001 – Gestión de la Calidad</h4>
+      <p class="card-text">
+        La <strong>ISO 9001</strong> establece los requisitos de un sistema de gestión de la calidad (SGC). Su propósito es garantizar que las organizaciones:
+      </p>
+      <ul>
+        <li>Documenten y controlen sus procesos.</li>
+        <li>Busquen la mejora continua.</li>
+        <li>Midan la satisfacción del cliente.</li>
+      </ul>
+      <p>
+        Aunque no está enfocada únicamente en software, se aplica en empresas desarrolladoras para garantizar calidad en todos los procesos: desde el análisis de requisitos hasta la entrega y soporte del producto.
+      </p>
+    </div>
+  </div>
+
+  <!-- ISO/IEC 12207 -->
+  <div class="card mb-3 shadow-sm">
+    <div class="card-body">
+      <h4 class="card-title text-success">ISO/IEC 12207 – Procesos del Ciclo de Vida del Software</h4>
+      <p class="card-text">
+        La norma <strong>ISO/IEC 12207</strong> define todos los procesos necesarios para gestionar y desarrollar software de calidad. Se agrupan en tres categorías:
+      </p>
+      <ul>
+        <li><strong>Procesos primarios:</strong> adquisición, desarrollo, operación y mantenimiento.</li>
+        <li><strong>Procesos de apoyo:</strong> verificación, validación, documentación, auditoría, gestión de configuración.</li>
+        <li><strong>Procesos organizacionales:</strong> mejora, formación y gestión de infraestructura.</li>
+      </ul>
+      <p>
+        Esta norma complementa a la ISO/IEC 25010, asegurando calidad no solo en el producto, sino también en la gestión del ciclo de vida.
+      </p>
+    </div>
+  </div>
+
+  <div class="alert alert-info mt-4">
+    <strong>Conclusión:</strong> La aplicación combinada de estas normas permite asegurar la calidad del software tanto en el producto final como en los procesos organizativos, garantizando confiabilidad, satisfacción del usuario y mejora continua.
+  </div>
+</div>
+{% endblock %}
