@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Evaluador de Calidad de Software</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>Evaluador de Calidad de Software</h1>
+    <p>Aplicación educativa para entender normas, modelos, estándares y evaluar un aplicativo según calidad, código y programación.</p>
+  </header>
+
+  <main>
+    <section id="about">
+      <h2>¿Qué es la Calidad del Software?</h2>
+      <p>La calidad del software es el grado en que un producto de software cumple con los requisitos, satisface las necesidades del usuario y se ajusta a normas, modelos y estándares de la industria. Incluye atributos como funcionalidad, fiabilidad, usabilidad, eficiencia, mantenibilidad y portabilidad.</p>
+
+      <h3>Normas, Modelos y Estándares</h3>
+      <ul>
+        <li><strong>Normas:</strong> Documentos oficiales (por ejemplo, ISO/IEC 25010, ISO/IEC 9126) que describen atributos de calidad y criterios.</li>
+        <li><strong>Modelos:</strong> Marcos conceptuales como CMMI (madurez de procesos) que ayudan a mejorar prácticas de desarrollo y aseguramiento de la calidad.</li>
+        <li><strong>Estándares:</strong> Guías de codificación, revisiones, pruebas y herramientas (por ejemplo, IEEE, OWASP para seguridad).</li>
+      </ul>
+
+      <h3>Código y Programación</h3>
+      <p>Buena calidad en código implica legibilidad, modularidad, pruebas automatizadas, documentación, manejo de errores y seguimiento de buenas prácticas (naming, comentarios, patrones). El cumplimiento de estándares de codificación facilita mantenibilidad y reduce defectos.</p>
+    </section>
+
+    <section id="evaluation">
+      <h2>Evaluación de un Aplicativo (entorno educativo)</h2>
+      <p>Complete las valoraciones (0 a 5) en cada criterio. La calificación final será una puntuación cuantitativa (0 - 5).</p>
+
+      <form id="evalForm">
+        <fieldset>
+          <legend>Estándares de Calidad</legend>
+          <label>Funcionalidad (0-5): <input type="number" min="0" max="5" step="0.1" name="funcionalidad" value="3"></label>
+          <label>Fiabilidad (0-5): <input type="number" min="0" max="5" step="0.1" name="fiabilidad" value="3"></label>
+          <label>Usabilidad (0-5): <input type="number" min="0" max="5" step="0.1" name="usabilidad" value="3"></label>
+          <label>Eficiencia (0-5): <input type="number" min="0" max="5" step="0.1" name="eficiencia" value="3"></label>
+        </fieldset>
+
+        <fieldset>
+          <legend>Código</legend>
+          <label>Legibilidad/Estilo (0-5): <input type="number" min="0" max="5" step="0.1" name="legibilidad" value="3"></label>
+          <label>Documentación/Comentarios (0-5): <input type="number" min="0" max="5" step="0.1" name="documentacion" value="3"></label>
+          <label>Pruebas Unitarias (0-5): <input type="number" min="0" max="5" step="0.1" name="unitarias" value="3"></label>
+        </fieldset>
+
+        <fieldset>
+          <legend>Programación</legend>
+          <label>Modularidad/Arquitectura (0-5): <input type="number" min="0" max="5" step="0.1" name="modularidad" value="3"></label>
+          <label>Manejo de Errores (0-5): <input type="number" min="0" max="5" step="0.1" name="errores" value="3"></label>
+          <label>Seguridad/Buenas Prácticas (0-5): <input type="number" min="0" max="5" step="0.1" name="seguridad" value="3"></label>
+        </fieldset>
+
+        <div class="actions">
+          <button type="button" id="calculateBtn">Calcular Calificación</button>
+          <button type="button" id="exportBtn">Exportar Resultado (JSON)</button>
+          <button type="reset">Restablecer</button>
+        </div>
+      </form>
+
+      <div id="resultArea" aria-live="polite">
+        <!-- Results will appear here -->
+      </div>
+    </section>
+
+    <section id="model">
+      <h2>Modelo de Evaluación (métricas cuantitativas)</h2>
+      <p>El modelo calcula promedios por categoría y luego una puntuación final como media ponderada:</p>
+      <ul>
+        <li>Estándares de Calidad (peso 50%)</li>
+        <li>Código (peso 30%)</li>
+        <li>Programación (peso 20%)</li>
+      </ul>
+      <p>Cada criterio se ingresa de 0 a 5. El resultado es una puntuación numérica entre 0 y 5 y un desglose porcentual.</p>
+    </section>
+
+    <footer>
+      <p>Proyecto para entrega: descargue el ZIP y súbalo a GitHub / Replit.</p>
+    </footer>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
