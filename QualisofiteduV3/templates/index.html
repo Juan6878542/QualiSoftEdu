@@ -1,0 +1,5 @@
+<!-- see earlier content -->
+{% extends 'base.html' %}
+{% block title %}Inicio{% endblock %}
+{% block content %}
+<div class='p-4 bg-light rounded-3'><h1>Bienvenido a QualiSoftEdu</h1><p class='lead'>Aplicativo web para contextualizar, medir y mejorar la calidad del software en entornos educativos.</p><a class='btn btn-primary' href='{{ url_for("evaluar") }}'>Ir al Evaluador</a></div>{% endblock %}

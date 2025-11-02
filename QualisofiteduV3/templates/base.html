@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>QualiSoftEdu - {% block title %}{% endblock %}</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="{{ url_for('static', filename='css/styles.css') }}" rel="stylesheet">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="{{ url_for('index') }}">QualiSoftEdu</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="nav">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item"><a class="nav-link" href="{{ url_for('normas') }}">Normas</a></li>
+        <li class="nav-item"><a class="nav-link" href="{{ url_for('modelos') }}">Modelos</a></li>
+        <li class="nav-item"><a class="nav-link" href="{{ url_for('estandares') }}">Estándares</a></li>
+        <li class="nav-item"><a class="nav-link" href="{{ url_for('codigo') }}">Código</a></li>
+        <li class="nav-item"><a class="nav-link" href="{{ url_for('pruebas') }}">Pruebas</a></li>
+        <li class="nav-item"><a class="nav-link" href="{{ url_for('aplicativos') }}">Aplicativos</a></li>
+        <li class="nav-item"><a class="nav-link" href="{{ url_for('evaluar') }}">Evaluar</a></li>
+        <li class="nav-item"><a class="nav-link" href="{{ url_for('historico') }}">Histórico</a></li>
+        <li class="nav-item"><a class="nav-link" href="{{ url_for('conclusiones') }}">Conclusiones</a></li>
+        <li class="nav-item"><a class="nav-link" href="{{ url_for('recomendaciones') }}">Recomendaciones</a></li>
+        <li class="nav-item"><a class="nav-link" href="{{ url_for('anexos') }}">Anexos</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<main class="container my-4">
+  {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+      {% for cat, msg in messages %}
+        <div class="alert alert-{{ 'success' if cat=='message' or cat==None else 'danger' }}" role="alert">{{ msg }}</div>
+      {% endfor %}
+    {% endif %}
+  {% endwith %}
+  {% block content %}{% endblock %}
+</main>
+<footer class="text-center py-3">
+  <div class="container">Proyecto académico: Evaluador de Calidad de Software — QualiSoftEdu</div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

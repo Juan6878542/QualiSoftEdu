@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block title %}Evaluar{% endblock %}
+{% block content %}
+<h2>Evaluar Aplicativo</h2>
+<form method='post'>
+  <div class='mb-3'>
+    <label class='form-label'>Aplicativo</label>
+    <select class='form-select' name='id_aplicativo' required>
+      <option value=''>-- Seleccione --</option>
+      {% for a in aplicativos %}
+        <option value='{{ a['id_aplicativo'] }}'>{{ a['nombre'] }}</option>
+      {% endfor %}
+    </select>
+  </div>
+  <p>Califique 0..5</p>
+  <div class='row'>
+    <div class='col-md-4 mb-3'><label>Funcionalidad</label><input class='form-control' type='number' name='funcionalidad' min='0' max='5' step='0.1' required></div>
+    <div class='col-md-4 mb-3'><label>Fiabilidad</label><input class='form-control' type='number' name='fiabilidad' min='0' max='5' step='0.1' required></div>
+    <div class='col-md-4 mb-3'><label>Usabilidad</label><input class='form-control' type='number' name='usabilidad' min='0' max='5' step='0.1' required></div>
+  </div>
+  <div class='row'>
+    <div class='col-md-4 mb-3'><label>Eficiencia</label><input class='form-control' type='number' name='eficiencia' min='0' max='5' step='0.1' required></div>
+    <div class='col-md-4 mb-3'><label>Mantenibilidad</label><input class='form-control' type='number' name='mantenibilidad' min='0' max='5' step='0.1' required></div>
+    <div class='col-md-4 mb-3'><label>Portabilidad</label><input class='form-control' type='number' name='portabilidad' min='0' max='5' step='0.1' required></div>
+  </div>
+  <div class='mb-3'><label>Evaluador</label><input class='form-control' name='evaluador'></div>
+  <div class='mb-3'><label>Comentarios</label><textarea class='form-control' name='comentarios'></textarea></div>
+  <button class='btn btn-primary'>Calcular y Guardar</button>
+</form>
+{% endblock %}
