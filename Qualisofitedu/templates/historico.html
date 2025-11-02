@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block title %}Histórico{% endblock %}
+{% block content %}
+<h2>Histórico de Evaluaciones</h2>
+<a class="btn btn-outline-primary mb-3" href="{{ url_for('historico_export') }}">Exportar CSV</a>
+<table class="table table-striped">
+  <thead><tr><th>ID</th><th>Aplicativo</th><th>Score</th><th>% Total</th><th>Evaluador</th><th>Fecha</th></tr></thead>
+  <tbody>
+    {% for r in rows %}
+      <tr>
+        <td>{{ r['id_evaluacion'] }}</td>
+        <td>{{ r['aplicativo'] }}</td>
+        <td>{{ r['score_0_5'] }}</td>
+        <td>{{ r['total_percent'] }}</td>
+        <td>{{ r['evaluador'] }}</td>
+        <td>{{ r['fecha_eval'] }}</td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

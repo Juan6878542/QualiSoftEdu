@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}Resultado{% endblock %}
+{% block content %}
+<h2>Resultado de la Evaluación</h2>
+<p><strong>Aplicativo:</strong> {{ ev['aplicativo'] }}</p>
+<p><strong>Fecha:</strong> {{ ev['fecha_eval'] }}</p>
+<ul>
+  <li>Normas: {{ ev['normas'] }}</li>
+  <li>Modelos: {{ ev['modelos'] }}</li>
+  <li>Estándares: {{ ev['estandares'] }}</li>
+  <li>Código: {{ ev['codigo'] }}</li>
+  <li>Pruebas: {{ ev['pruebas'] }}</li>
+</ul>
+<p><strong>Puntaje total (%):</strong> {{ ev['total_percent'] }}%</p>
+<p><strong>Calificación (0–5):</strong> {{ ev['score_0_5'] }} — <em>{{ label }}</em></p>
+<a class="btn btn-secondary" href="{{ url_for('historico') }}">Ver histórico</a>
+{% endblock %}

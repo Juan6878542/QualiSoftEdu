@@ -1,0 +1,1 @@
+# Evaluador de Calidad de Software (QualiSoftEdu)\n\nImport this project into Replit or run locally.\n\nRun:\npython create_db.py\npython app.py\n

@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %}Recursos{% endblock %}
+{% block content %}
+<h2>Recursos: Normas y Documentos</h2>
+<div class="list-group">
+  {% for r in recursos %}
+    <a class="list-group-item list-group-item-action" href="{{ r['enlace'] }}" target="_blank">
+      <strong>{{ r['titulo'] }}</strong> — {{ r['descripcion'] }}
+    </a>
+  {% endfor %}
+</div>
+{% endblock %}

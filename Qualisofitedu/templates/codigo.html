@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block title %}Código y Buenas Prácticas{% endblock %}
+{% block content %}
+<h2>Código y Buenas Prácticas</h2>
+<p>Buenas prácticas recomendadas:</p>
+<ul>
+  <li>Comentarios claros y funciones pequeñas.</li>
+  <li>Convenciones de nombres y formato consistente.</li>
+  <li>Pruebas unitarias y manejo de excepciones.</li>
+</ul>
+<h4>Ejemplo PL/SQL (documentado)</h4>
+<pre>
+FUNCTION calcular_promedio(p1 NUMBER, p2 NUMBER) RETURN NUMBER IS
+BEGIN
+  RETURN (p1 + p2) / 2;
+END;
+</pre>
+{% endblock %}
