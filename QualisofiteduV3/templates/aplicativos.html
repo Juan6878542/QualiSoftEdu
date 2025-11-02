@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block title %}Evaluación de Aplicativos{% endblock %}
+{% block content %}
+<div class="container mt-4">
+    <h2>Evaluación de Aplicativos Educativos</h2>
+    <p>En esta sección puedes evaluar un aplicativo educativo según las métricas de calidad definidas por la norma ISO/IEC 25010.</p>
+
+    <form action="/evaluar" method="POST" class="mt-3">
+        <div class="mb-3">
+            <label class="form-label">Nombre del aplicativo:</label>
+            <input type="text" name="nombre" class="form-control" required>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4">
+                <label>Funcionalidad (0 a 5):</label>
+                <input type="number" name="funcionalidad" class="form-control" min="0" max="5" step="0.1" required>
+            </div>
+            <div class="col-md-4">
+                <label>Usabilidad (0 a 5):</label>
+                <input type="number" name="usabilidad" class="form-control" min="0" max="5" step="0.1" required>
+            </div>
+            <div class="col-md-4">
+                <label>Mantenibilidad (0 a 5):</label>
+                <input type="number" name="mantenibilidad" class="form-control" min="0" max="5" step="0.1" required>
+            </div>
+        </div>
+
+        <div class="mt-3">
+            <label>Portabilidad (0 a 5):</label>
+            <input type="number" name="portabilidad" class="form-control" min="0" max="5" step="0.1" required>
+        </div>
+
+        <button type="submit" class="btn btn-primary mt-4">Calcular Promedio</button>
+    </form>
+</div>
+{% endblock %}
